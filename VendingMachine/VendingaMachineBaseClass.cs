@@ -57,11 +57,12 @@ namespace VendingMachine
             while (insert)
             {
                 Console.WriteLine("Insert money (ENTER to stop)");
-                string inputText = Console.ReadLine();
+                string inputText = Console.ReadLine();                
 
-                //if (!string.IsNullOrWhiteSpace(inputText))
-                //{
                 insert = int.TryParse(inputText, out int inputMoney);
+
+                if (string.IsNullOrWhiteSpace(inputText))
+                { insert = false; }
 
                 if (insert == true)
                 {
@@ -78,14 +79,9 @@ namespace VendingMachine
                 }
                 else
                 {
-                    insert = false;
-                    Console.WriteLine("Not a valid number!");
+                    Console.WriteLine("Returning to menu!");
                 }
-                //}
-                //else
-                //{
-                //    insert = false;
-                //}                
+                              
             }
 
             return CustomerWallet;
