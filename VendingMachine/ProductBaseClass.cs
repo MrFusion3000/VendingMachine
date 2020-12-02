@@ -13,6 +13,7 @@ namespace VendingMachine
 
         public int AmountInStock { get; set; }
 
-        public bool OutOfStock { get; set; }
+        public bool OutOfStock  { get; set; }
     }
+
 }

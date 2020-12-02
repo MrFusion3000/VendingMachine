@@ -4,9 +4,17 @@ namespace VendingMachine
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Menu.ShowMenu();
+
+            //Inmatning av pengar
+
+            //Val av produkter
+
+            // Visa Varukorg
+
+            //Återbetalning av överskjutande medel
         }
     }
 }
