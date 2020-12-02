@@ -8,7 +8,59 @@ namespace VendingMachine
         {
             Menu.ShowMenu();
 
-            //Inmatning av pengar
+            bool insert = true;
+            int CustomerWallet = 0;
+
+            while (insert)
+            {
+                Console.WriteLine("Make your choice (1-9, ENTER to leave):");
+                string inputText = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(inputText))
+                {
+                    bool input = int.TryParse(inputText, out int menuChoice);
+
+                    while (input == true)
+                    {
+                        switch (menuChoice)
+                        {
+                            case 1:
+                                CustomerWallet = VendingMachine.CustomerInput();
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                            case 6:
+                                break;
+                            case 7:
+                                break;
+                            case 8:
+                                break;
+                            case 9:
+                                break;
+                            case 10:
+                                break;
+                            default:
+                                input = false;
+                                //insert = false;
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    insert = false;
+                }
+            }
+
+            
+            Console.WriteLine("Your wallet contains: {0}", CustomerWallet);
+            
 
             //Val av produkter
 
@@ -16,5 +68,7 @@ namespace VendingMachine
 
             //Återbetalning av överskjutande medel
         }
+
+        
     }
 }

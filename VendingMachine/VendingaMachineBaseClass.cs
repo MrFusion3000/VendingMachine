@@ -47,10 +47,54 @@ namespace VendingMachine
             //ProductList = new List<Product>();
         }
 
+        public static int CustomerInput()
+        {
+            //Inmatning av pengar
+            int[] moneyArray = new int[] { 1, 5, 10, 20, 50, 100, 500, 1000 };
+
+            bool insert = true;
+            int CustomerWallet = 0;
+            while (insert)
+            {
+                Console.WriteLine("Insert money (ENTER to stop)");
+                string inputText = Console.ReadLine();
+
+                //if (!string.IsNullOrWhiteSpace(inputText))
+                //{
+                insert = int.TryParse(inputText, out int inputMoney);
+
+                if (insert == true)
+                {
+                int first = Array.Find(moneyArray, p => p.Equals(inputMoney));
+
+                    if (first == inputMoney)
+                    {
+                        CustomerWallet += inputMoney;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a valid denomination!");
+                    }
+                }
+                else
+                {
+                    insert = false;
+                    Console.WriteLine("Not a valid number!");
+                }
+                //}
+                //else
+                //{
+                //    insert = false;
+                //}                
+            }
+
+            return CustomerWallet;
+        }
     }
 
         //List of products, array of products or list of enums    
 
+    
 
 }
 
