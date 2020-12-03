@@ -6,75 +6,106 @@ namespace VendingMachine
 {
     public class Product
     {
-       public object ProductItem { get; set; }
+       //public object ProductItem { get; set; }        
     }
-    public class Beverage : ProductBaseClass
-    {
-        //public override int ProductId => 1;
-        //public override string ProductName => "ZvampZoda";
-        //public override int Price => 5;
-        public override string Description { get; set; }
-        public override int AmountInStock { get { return AmountInStock; } set {  } }
-        public override bool OutOfStock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public override void Examine()
+    public class ProductItem : IProduct
+    {
+        public int ProductId { get ; set ; }
+        public string ProductName { get => ProductName; set => ProductName = "value"; } //Stack overflow
+        public int Price { get { return Price; } set => Price = value; }
+        public string Description { get { return Description; } set => Description = value; }
+
+        public void Examine()
+        {            
+        }
+
+        public void Purchase(int customerWallet, int productPrice, Product product)
         {
-            Console.WriteLine("Dryck: {0}\tPris: {1}\t Lager:{2}", ProductName, Price, AmountInStock);
+        }
+
+        public void Use()
+        {
+        }                
+    }
+
+    public class Beverage : ProductItem
+    {        
+        public new void Examine()
+        {
+            Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
             Console.WriteLine("Description: {0}", Description);
         }
-        public override void Purchase()
+        public new void Purchase(int customerWallet, int productPrice, Product product)
         {
+            int CustomerWallet = customerWallet;
+            int ProductPrice = productPrice;
+            CustomerWallet -= ProductPrice;
+
+            //Add to cart
+            Console.WriteLine("{0} added to cart.", ProductName);
+            Console.WriteLine("You have {0} kr left in your wallet.", CustomerWallet);
         }
-        public override void Use()
+        public new void Use()
         {
             Console.WriteLine("Klunk, klunk, klunk! Ahh, refreshed!");
         }
-    }
 
-    public class Food : ProductBaseClass
-    {
-        //public override int ProductId => throw new NotImplementedException();
-        //public override string ProductName => throw new NotImplementedException();
-        //public override int Price => throw new NotImplementedException();
-        public override string Description { get; set; }
-        public override int AmountInStock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool OutOfStock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public override void Examine()
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return ProductName;
+        }
+    }    
+
+    public class Food : ProductItem
+    {        
+
+        public new void Examine()
+        {
+            Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
+            Console.WriteLine("Description: {0}", Description);
         }
 
-        public override void Purchase()
+        public new void Purchase(int customerWallet, int productPrice, Product product)
         {
-            throw new NotImplementedException();
+            int CustomerWallet = customerWallet;
+            int ProductPrice = productPrice;
+
+            CustomerWallet -= ProductPrice;
+            //Add to cart
+            Console.WriteLine("{0} added to cart.", ProductName);
+            Console.WriteLine("You have {0} kr left in your wallet.", CustomerWallet);
         }
 
-        public override void Use()
+        public new void Use()
         {
             Console.WriteLine("Smack, moffel, gulp!! that was a good {0}", ProductName);
         }
     }
-    public class Snacks : ProductBaseClass
+    public class Snacks : ProductItem
     {
-        //public override int ProductId => throw new NotImplementedException();
-        //public override string ProductName => throw new NotImplementedException();
-        //public override int Price => throw new NotImplementedException();
-        public override string Description { get; set; }
-        public override int AmountInStock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool OutOfStock { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public override void Examine()
+        public new void Examine()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
+            Console.WriteLine("Description: {0}", Description);
         }
 
-        public override void Purchase()
+        public void Purchase(int customerWallet, int productPrice, ProductItem product)
         {
-            throw new NotImplementedException();
+            int CustomerWallet = customerWallet;
+            int ProductPrice = productPrice;
+            ProductItem Product = product;
+
+            CustomerWallet -= ProductPrice;
+
+            //shoppingCart.Add(Product);
+
+            //Add to cart
+            Console.WriteLine("{0} added to cart.", ProductName);
+            Console.WriteLine("You have {0} kr left in your wallet.", CustomerWallet);
         }
 
-        public override void Use()
+        public new void Use()
         {
             Console.WriteLine("Moffa, moffa, moffa!");
         }

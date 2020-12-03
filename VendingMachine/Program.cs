@@ -50,21 +50,67 @@ namespace VendingMachine
             
             Console.WriteLine("Your wallet contains: {0}", CustomerWallet);
 
+            //ProductItem.InitProducts();
+            
+            //Add Drink SvampZoda
+            Beverage Zvampsoda = new Beverage()
+            {
+                ProductName = "ZvampZoda",
+                Price = 6,
+                Description = "A fine sparkling soda made of fresh forest mushrooms."
+            };
+
+            Beverage Loka = new Beverage()
+            {
+                ProductName = "Loka Gul Snö",
+                Price = 5,
+                Description = "A less than tasty sparkling soda made of yellow snow."
+            };
+
+            Food Spamwich = new Food()
+            {
+                ProductName = "SPAM-wich",
+                Price = 25,
+                Description = "It's like a sandwich, but with SPAM."
+            };
+
+            Food EggBaconSpamwich = new Food()
+            {
+                ProductName = "Egg-Bacon-Spam-wich",
+                Price = 30,
+                Description = "It's like a SPAM-wich, but also with egg and bacon ."
+            };
+
+            Food Spamspamspambaconspam = new Food()
+            {
+                ProductName = "Spam-spam-spam-bacon-spam",
+                Price = 30,
+                Description = "It's not like a SPAM-wich, only Spam, Spam, Spam, bacon and Spam."
+            };
+
             List<ProductItem> inventory = new List<ProductItem>();
 
             List<ProductItem> shoppingCart = new List<ProductItem>();
 
-            //Add Drink
-            Beverage drink = new Beverage()
-            {
-                ProductName = "ZvampZoda",
-                Price = 5,
-                Description = "A fine sparkling soda made of fresh forest mushrooms."
-            };
+            inventory.Add(Zvampsoda);
+            inventory.Add(Loka);
+            inventory.Add(Spamwich);
+            inventory.Add(EggBaconSpamwich);
+            inventory.Add(Spamspamspambaconspam);
 
 
 
-            shoppingCart.Add(new ProductItem(drink)); 
+
+            Console.WriteLine("Bought: " + Spamwich.ProductName + " for " + Spamwich.Price + " Info:" + Spamwich.Description );
+
+            //inventory.Add(new Beverage(drink));
+
+
+            
+
+
+
+            //shoppingCart.Add(new ProductItem(drink)); 
 
 
 
