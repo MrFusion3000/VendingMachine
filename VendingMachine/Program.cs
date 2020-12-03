@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VendingMachine
 {
@@ -48,7 +49,24 @@ namespace VendingMachine
             }
             
             Console.WriteLine("Your wallet contains: {0}", CustomerWallet);
-            
+
+            List<ProductItem> inventory = new List<ProductItem>();
+
+            List<ProductItem> shoppingCart = new List<ProductItem>();
+
+            //Add Drink
+            Beverage drink = new Beverage()
+            {
+                ProductName = "ZvampZoda",
+                Price = 5,
+                Description = "A fine sparkling soda made of fresh forest mushrooms."
+            };
+
+
+
+            shoppingCart.Add(new ProductItem(drink)); 
+
+
 
             //Val av produkter
 
