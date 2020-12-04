@@ -6,14 +6,15 @@ namespace VendingMachine
 {
     public interface  IProduct
     {
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public int Price { get; set; }
-        public string Description { get; set; }
+        //public int ProductId { get; set; }
+        public /*abstract*/ string ProductName { get; set; }
+        public /*abstract*/ int Price { get; set; }
+        public /*abstract*/ string Description { get; set; }
 
         public abstract void Purchase(int customerWallet, int productPrice, Product product);
         public abstract void Examine();
         public abstract void Use();
+
 
     }
 }

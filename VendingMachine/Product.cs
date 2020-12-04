@@ -11,10 +11,10 @@ namespace VendingMachine
 
     public class ProductItem : IProduct
     {
-        public int ProductId { get ; set ; }
-        public string ProductName { get => ProductName; set => ProductName = "value"; } //Stack overflow
-        public int Price { get { return Price; } set => Price = value; }
-        public string Description { get { return Description; } set => Description = value; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int Price { get; set; }
+        public string Description { get; set; }
 
         public void Examine()
         {            
@@ -30,7 +30,7 @@ namespace VendingMachine
     }
 
     public class Beverage : ProductItem
-    {        
+    {
         public new void Examine()
         {
             Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
@@ -58,8 +58,7 @@ namespace VendingMachine
     }    
 
     public class Food : ProductItem
-    {        
-
+    {
         public new void Examine()
         {
             Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
@@ -83,7 +82,7 @@ namespace VendingMachine
         }
     }
     public class Snacks : ProductItem
-    {
+    {        
         public new void Examine()
         {
             Console.WriteLine("Dryck: {0}\tPris: {1}", ProductName, Price);
