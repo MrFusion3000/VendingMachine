@@ -11,9 +11,9 @@ namespace VendingMachine
         public /*abstract*/ int Price { get; set; }
         public /*abstract*/ string Description { get; set; }
 
-        public abstract void Purchase(int customerWallet, int productPrice, Product product);
+        public abstract void Purchase(int customerWallet, int productPrice, ProductItem product);
         public abstract void Examine();
-        public abstract void Use();
+        public abstract void Use(string ProductName);
 
 
     }

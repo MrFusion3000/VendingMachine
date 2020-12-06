@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace VendingMachine
 {
@@ -7,31 +8,14 @@ namespace VendingMachine
     {
         static void Main()
         {
-            ProductInitializer.ProductInit();
+            VendingMachine.MenuChoices();
 
-            Menu.ShowMenu();
+            //VendingMachine.ShowShoppingCart();
+
 
             
-
-            
-
-
-
-            //inventory.Add(new Beverage(drink));                  
-
-
-
-            //shoppingCart.Add(new ProductItem(drink)); 
-
-
-
-            //Val av produkter
-
-            // Visa Varukorg
-
-            //Återbetalning av överskjutande medel
         }
+}
+    
 
-        
-    }
 }
