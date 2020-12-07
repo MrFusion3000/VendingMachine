@@ -113,7 +113,10 @@ public static int CustomerInput()
 
                 if (string.IsNullOrWhiteSpace(inputText))
                 {
-                    //FinishPurchase();
+                    if (CustomerWallet > 0)
+                    {
+
+                    }
                     insert = false; 
                 }
 

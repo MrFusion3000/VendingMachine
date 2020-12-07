@@ -17,7 +17,7 @@ namespace VendingMachine
             // Menu
             Console.WriteLine("1. Insert money");
             Console.WriteLine("2. Show Cart");
-            Console.WriteLine("3. Finish purchase/Return money\n");
+            Console.WriteLine("3. Finish purchase/Return money");
 
             Console.WriteLine("============================================");
             Console.WriteLine("\tProducts");
